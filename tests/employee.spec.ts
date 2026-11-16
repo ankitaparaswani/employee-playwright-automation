@@ -7,12 +7,12 @@ test.describe('Employee Management', () => {
     test.beforeEach(async ({ loginPage }) => {
 
         //Navigate to the application URL
-        await loginPage.navigate("https://sandbox-app.brighthr.com");
+        await loginPage.navigate();
 
         //Login and verify
         await loginPage.login(
-            'qaAutomationTechTask@grr.la',
-            'A1234567890-'
+            process.env.TEST_USER_EMAIL!,
+            process.env.TEST_USER_PASSWORD!
         );
         // verify title
         await loginPage.verifyLogin(/Dashboard - BrightHR/i);

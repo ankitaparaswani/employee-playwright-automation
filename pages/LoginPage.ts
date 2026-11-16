@@ -5,8 +5,8 @@ export class LoginPage {
     constructor(private page: Page) {
     }
 
-    async navigate(url: string): Promise<void> {
-        await this.page.goto(url);
+    async navigate(): Promise<void> {
+        await this.page.goto('/');
     }
 
     async login(
